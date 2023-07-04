@@ -4,17 +4,19 @@ import React from 'react';
 
 function App() 
 {
-   const [str,setStr] = useState("");
-   const handleInputChange = (event) => {
-    // event.target.value is access the value that is written in the input field
-      setStr(event.target.value);
-   };
+   const [str,setStr] = useState(true);
+
+   function changevisibility()
+   {
+      setStr(!str);
+   }
+
+
    return (
-      <div>
-         <input type="text" onChange={handleInputChange}/>
-         <br></br>
-         {str}
-      </div>
+    <div>
+        <button onClick={changevisibility}>Show/Hide</button>
+        {str && <h1>HI My name is Nitin</h1>}
+    </div>
    );
 }
 
