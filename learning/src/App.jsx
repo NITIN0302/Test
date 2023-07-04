@@ -4,14 +4,16 @@ import React from 'react';
 
 function App() 
 {
-   const [age,setAge] = useState(0);
-   function incAge()
-   {
-     setAge(age+1);
-   }
+   const [str,setStr] = useState("");
+   const handleInputChange = (event) => {
+    // event.target.value is access the value that is written in the input field
+      setStr(event.target.value);
+   };
    return (
       <div>
-         {age} <button onClick={incAge}>Increment Age</button>
+         <input type="text" onChange={handleInputChange}/>
+         <br></br>
+         {str}
       </div>
    );
 }
