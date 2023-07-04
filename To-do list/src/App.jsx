@@ -18,6 +18,17 @@ function App()
     setAddtask(newtodo);
   }
 
+  function deleteTask(task)
+  {
+      const newarr = Task.filter((name) =>{
+        if(name === task)
+          return false;
+        else
+          return true;
+      })
+      setAddtask(newarr);
+  }
+
    return (
     <div className='App'>
       <div className="addTask">
@@ -26,7 +37,10 @@ function App()
       </div>
       <div className="list">
         {Task.map((task)=>{
-        return <h1>{task}</h1>;
+        return <div className="task">
+          <h1>{task}</h1>
+          <button onClick={() => deleteTask(task)}>X</button>
+          </div>;
         })}
       </div>
 
