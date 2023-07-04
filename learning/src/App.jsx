@@ -4,18 +4,21 @@ import React from 'react';
 
 function App() 
 {
-   const [str,setStr] = useState(true);
+   const [str,setStr] = useState("blue");
 
    function changevisibility()
    {
-      setStr(!str);
+      if(str == "blue")
+        setStr("red");
+      else
+        setStr("blue");
    }
 
 
    return (
     <div>
-        <button onClick={changevisibility}>Show/Hide</button>
-        {str && <h1>HI My name is Nitin</h1>}
+        <button onClick={changevisibility} >Show/Hide</button>
+        <h1 style = {{color: str}}>HI My name is Nitin</h1>
     </div>
    );
 }
