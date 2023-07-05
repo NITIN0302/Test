@@ -6,6 +6,12 @@ function App()
 {
   const [Task,setAddtask] = useState([]);
   const [newTask,setNewtask] = useState("");
+  const [state,setState] = useState("Black");
+
+  function taskCompleted()
+  {
+      setState("green");
+  }
 
   function settask(event)
   {
@@ -14,6 +20,7 @@ function App()
 
   function addtask()
   {
+    setState("black");
     const newtodo = [...Task, newTask];
     setAddtask(newtodo);
   }
@@ -37,10 +44,13 @@ function App()
       </div>
       <div className="list">
         {Task.map((task)=>{
-        return <div className="task">
+        return <div style={{backgroundColor:state}} className="task">
           <h1>{task}</h1>
-          <button onClick={() => deleteTask(task)}>X</button>
-          </div>;
+          <div className="btn">
+            <button onClick={taskCompleted} >Complete</button>
+            <button onClick={() => deleteTask(task)}>X</button>
+          </div>
+        </div>;
         })}
       </div>
 
