@@ -1,18 +1,22 @@
-import userContextProvider from './Context/userContextProvider.jsx';
-import './App.css'
-import Profile from './Component/Profile.jsx';
-import Login from './Component/Login.jsx';
+import UserContextProvider from "./context/UserContextProvider.jsx";
+import Login from "./component/Login.jsx";
+import Profile from "./component/Profile.jsx";
 
 function App() {
-
-
   return (
-    <userContextProvider value={{}}>
-      <h1>Hello World</h1>
-      <Login />
-      <Profile />
-    </userContextProvider>
-  )
+    <>
+      <div className="w-full h-screen bg-black flex flex-wrap justify-center ">
+        <div className="bg-slate-300 w-[40%] h-[40%] rounded-md my-auto flex flex-wrap justify-center py-5">
+          <UserContextProvider>
+            <div className="text-center">
+              <Login />
+              <Profile />
+            </div>
+          </UserContextProvider>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
