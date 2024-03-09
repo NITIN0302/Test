@@ -11,9 +11,9 @@ export default function Page() {
         <Heading>Heading</Heading>
         <Heading>Heading</Heading>
         <Section level={3}>
-          <Heading>Sub-heading</Heading>
-          <Heading>Sub-heading</Heading>
-          <Heading>Sub-heading</Heading>
+          <Heading>Sub</Heading>
+          <Heading>Sub</Heading>
+          <Heading>Sub</Heading>
           <Section level={4}>
             <Heading>Sub-sub-heading</Heading>
             <Heading>Sub-sub-heading</Heading>
